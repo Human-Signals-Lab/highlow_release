@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 
-Prepare five folds for the ESC dataset, including down-sampling and up-sampling back to 16khz for feature extraction
+Prepare five folds for the ESC dataset, including down-sampling and up-sampling back to 16khz for feature extraction.
 
 """
 
