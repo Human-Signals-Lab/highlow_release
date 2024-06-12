@@ -210,16 +210,16 @@ def main():
     
    
     # path to the 1st teacher model
-    PATH_teacher_models = '/home/dl33629@austin.utexas.edu/research-lowhigh/models/cnn14+fc/sr_%d_shuffle/seg_%ds/models_for_esc_50class/%s/' %(sr_teacher, seg_t, sub)   # for esc: models_for_esc_50class
-    #PATH_teacher_models = '/home/dl33629@austin.utexas.edu/research-lowhigh/models/mbnet+fc/student/esc50_50class/FineTuneMBNetV2/sr_%d_1teacher/seg_5s/%s/' %(1000, sub)   # for multi stage
+    PATH_teacher_models = '/home/research-lowhigh/models/cnn14+fc/sr_%d_shuffle/seg_%ds/models_for_esc_50class/%s/' %(sr_teacher, seg_t, sub)   # for esc: models_for_esc_50class
+    #PATH_teacher_models = '/home/research-lowhigh/models/mbnet+fc/student/esc50_50class/FineTuneMBNetV2/sr_%d_1teacher/seg_5s/%s/' %(1000, sub)   # for multi stage
     # path to the 2nd teacher model, if any
-    #PATH_teacher_models2 = '/home/dl33629@austin.utexas.edu/research-lowhigh/models/mbnet+fc/sr_%d/seg_%ds/models_for_adl/%s/' %(16000, seg_t, sub)
+    #PATH_teacher_models2 = '/home/research-lowhigh/models/mbnet+fc/sr_%d/seg_%ds/models_for_adl/%s/' %(16000, seg_t, sub)
     PATH_teacher_models2 = None
     teacher_model_name = 'FineTuneCNN14'   #'FineTuneCNN14', 'fc_3layers', 'FineTuneMBNetV2', 'FineTuneResNet38'
     student_model_name = 'FineTuneCNN14'   #'FineTuneCNN14', 'fc_3layers', 'FineTuneMBNetV2', 'FineTuneResNet38'
     # adl and esc share the same path to save checkpoints / logs
-    PATH_save_models = '/home/dl33629@austin.utexas.edu/research-lowhigh/models/cnn14+fc/student/esc50_50class/%s/sr_%d/seg_%ds/%s/' %(student_model_name, sr_student, seg_t, sub)
-    PATH_log = '/home/dl33629@austin.utexas.edu/research-lowhigh/models/cnn14+fc/student/esc50_50class/%s/sr_%d/seg_%ds/%s/' %(student_model_name, sr_student, seg_t, sub)
+    PATH_save_models = '/home/research-lowhigh/models/cnn14+fc/student/esc50_50class/%s/sr_%d/seg_%ds/%s/' %(student_model_name, sr_student, seg_t, sub)
+    PATH_log = '/home/research-lowhigh/models/cnn14+fc/student/esc50_50class/%s/sr_%d/seg_%ds/%s/' %(student_model_name, sr_student, seg_t, sub)
     
     # prepare teacher model
     teacher_model = load_teacher_model(PATH_teacher_models, teacher_model_name, classes_num)
