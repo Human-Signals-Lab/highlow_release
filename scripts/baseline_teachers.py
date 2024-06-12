@@ -48,7 +48,7 @@ global_acc, global_f1 = [], []
 
 
 PATH_data = './esc50/'   # root dir of the resampled esc audio
-#PATH_data = '/home/dl33629@austin.utexas.edu/research-lowhigh/scripted_study_adl/'
+#PATH_data = '/home/research-lowhigh/scripted_study_adl/'
 for sr in [2000, 1000, 16000]:
     for fold in [1, 2 ,3, 4, 5]:
         X_train_feat, X_test_feat = [], []
@@ -81,8 +81,8 @@ for sr in [2000, 1000, 16000]:
         
         torch.cuda.empty_cache()
         
-        save_model_path = '/home/dl33629@austin.utexas.edu/research-lowhigh/models/cnn14+fc/sr_%d_shuffle/seg_%ds/models_for_esc_50class/fold%s/' %(sr, seg_t, fold)
-        #save_model_path = '/home/dl33629@austin.utexas.edu/research-lowhigh/models/cnn14+fc/sr_%d/seg_%ds/models_for_adl/fold%s/' %(sr, seg_t, fold)
+        save_model_path = '/home/research-lowhigh/models/cnn14+fc/sr_%d_shuffle/seg_%ds/models_for_esc_50class/fold%s/' %(sr, seg_t, fold)
+        #save_model_path = '/home/research-lowhigh/models/cnn14+fc/sr_%d/seg_%ds/models_for_adl/fold%s/' %(sr, seg_t, fold)
         check_dirs.check_dir(save_model_path)
         
         Model = eval(model_name)
